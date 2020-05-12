@@ -1,12 +1,12 @@
 package com.zxm.springcloud.controller;
 
 
+import com.zxm.springcloud.entities.CommonResult;
+import com.zxm.springcloud.entities.Payment;
 import com.zxm.springcloud.serivce.PymentService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
-import com.zxm.springcloud.entities.CommonResult;
-import com.zxm.springcloud.entities.Payment;
 import javax.annotation.Resource;
 
 @RestController
