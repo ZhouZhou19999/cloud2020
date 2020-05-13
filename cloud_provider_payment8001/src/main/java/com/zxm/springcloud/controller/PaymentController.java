@@ -1,13 +1,16 @@
 package com.zxm.springcloud.controller;
 
 
+import com.netflix.discovery.DiscoveryClient;
 import com.zxm.springcloud.serivce.PymentService;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.web.bind.annotation.*;
 
 import com.zxm.springcloud.entities.CommonResult;
 import com.zxm.springcloud.entities.Payment;
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 public class PaymentController {

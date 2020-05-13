@@ -21,3 +21,8 @@ eureka:
     fetchRegistry: true
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/    #集群版
+  instance:
+    instance-id: payment8001   #起别名
+    ip-address: true
+    #lease-renewal-interval-in-seconds: 1   #一秒一次心跳
+    #lease-expiration-duration-in-seconds: 2  #俩秒不发删除
