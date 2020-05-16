@@ -21,6 +21,7 @@ public class PaymentController {
     private CommonResult commonResult;
     @Value("${server.port}")
     private String serverPort;
+
     @PostMapping(value = "/payment/create")
     public CommonResult create(@RequestBody Payment payment){
         commonResult = new CommonResult();
