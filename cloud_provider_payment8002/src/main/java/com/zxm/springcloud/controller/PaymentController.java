@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 public class PaymentController {
@@ -45,8 +46,18 @@ public class PaymentController {
         }else {
             commonResult.setCode(400);
             commonResult.setMessage("访问失败,端口为:"+serverPort);
-            commonResult.setData(payment);
+            commonResult.setData(null);
         }
         return commonResult;
+    }
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB(){
+        return serverPort;
+    }
+
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeout(){
+        try { TimeUnit.SECONDS.sleep(3); }catch (Exception e) {e.printStackTrace();}
+        return serverPort;
     }
 }
