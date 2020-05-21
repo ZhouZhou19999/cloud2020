@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: cloud-payment-service
+  zipkin:
+    base-url: http://localhost:9411           #链路监听到
+  sleuth:                                       #监听的详细信息
+    sampler:
+      probability: 1
+
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
